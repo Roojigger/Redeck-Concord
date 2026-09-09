@@ -1,9 +1,52 @@
 [gd_scene format=3 uid="uid://6x1b4mctd5ut"]
 
-[node name="Control" type="Control" unique_id=428774054]
+[ext_resource type="Script" uid="uid://dpqwknbvh61in" path="res://Editor/editor.gd" id="1_rh0xm"]
+
+[node name="EditorRoot" type="Control" unique_id=428774054]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_rh0xm")
+
+[node name="VSplitContainer" type="VSplitContainer" parent="." unique_id=377358358]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+split_offsets = PackedInt32Array(0, 0)
+
+[node name="Toolbar" type="HBoxContainer" parent="VSplitContainer" unique_id=794281343]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="MainSplit" type="HSplitContainer" parent="VSplitContainer" unique_id=1030596540]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+split_offsets = PackedInt32Array(0, 0)
+
+[node name="SidesPanel" type="VBoxContainer" parent="VSplitContainer/MainSplit" unique_id=158130418]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+
+[node name="CanvasArea" type="Control" parent="VSplitContainer/MainSplit" unique_id=286762688]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="PropertiesPanel" type="Control" parent="VSplitContainer/MainSplit" unique_id=1271562344]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.0
+
+[node name="StatusBar" type="Control" parent="VSplitContainer" unique_id=1711845863]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
