@@ -1,0 +1,8 @@
+[gd_resource type="StyleBoxLine" format=3 uid="uid://dtqolf1jkqu83"]
+
+[resource]
+resource_name = "Vline Screen Sep"
+color = Color(1, 1, 1, 1)
+grow_begin = 15.0
+grow_end = 15.0
+thickness = 3

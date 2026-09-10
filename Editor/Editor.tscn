@@ -18,35 +18,98 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-split_offsets = PackedInt32Array(0, 0)
+split_offsets = PackedInt32Array(-160, -2)
+drag_area_highlight_in_editor = true
+split_offset = -160
 
-[node name="Toolbar" type="HBoxContainer" parent="VSplitContainer" unique_id=794281343]
+[node name="Control" type="Control" parent="VSplitContainer" unique_id=1082802367]
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 1.66
+
+[node name="Toolbar" type="HBoxContainer" parent="VSplitContainer/Control" unique_id=794281343]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
 size_flags_stretch_ratio = 0.6
+
+[node name="Panel" type="Panel" parent="VSplitContainer/Control" unique_id=1633176109]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="MainSplit" type="HSplitContainer" parent="VSplitContainer" unique_id=1030596540]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
-split_offsets = PackedInt32Array(0, 0)
+split_offsets = PackedInt32Array(0, -6)
+drag_area_highlight_in_editor = true
 
-[node name="SidesPanel" type="VBoxContainer" parent="VSplitContainer/MainSplit" unique_id=158130418]
+[node name="Control" type="Control" parent="VSplitContainer/MainSplit" unique_id=1344361148]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+
+[node name="SidesPanel" type="VBoxContainer" parent="VSplitContainer/MainSplit/Control" unique_id=158130418]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.6
+
+[node name="Panel" type="Panel" parent="VSplitContainer/MainSplit/Control" unique_id=824674863]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="CanvasArea" type="Control" parent="VSplitContainer/MainSplit" unique_id=286762688]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 2.0
 
+[node name="Panel" type="Panel" parent="VSplitContainer/MainSplit/CanvasArea" unique_id=754304267]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="PropertiesPanel" type="Control" parent="VSplitContainer/MainSplit" unique_id=1271562344]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.0
 
+[node name="Panel" type="Panel" parent="VSplitContainer/MainSplit/PropertiesPanel" unique_id=862158482]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="StatusBar" type="Control" parent="VSplitContainer" unique_id=1711845863]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
+
+[node name="Panel" type="Panel" parent="VSplitContainer/StatusBar" unique_id=1615565496]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
