@@ -15,6 +15,16 @@ class_name Editor
 
 class Slide:
 	var objects : Array[SlideObject]
+	
+	func draw(root_node):
+		for object in objects:
+			object.draw(root_node)
+	
+	func get_objects_reversed() -> Array[SlideObject]:
+		"""Returns all objects sorted by inverse z_index"""
+		var sorted = objects
+		sorted.sort_custom(func(a,b): return a.z_index < a.z_index)
+		return sorted
 
 class Deck:
 	var slides : Array[Slide]

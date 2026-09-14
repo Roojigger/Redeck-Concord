@@ -1,6 +1,8 @@
 extends Control 
 
 @onready var slide_root: Node2D = $%"Slide Root"
+@onready var document: Control = $"/root/Editor"
+@onready var selection : SelectionManager = SelectionManager.new()
 
 var zoom: float = 1.0
 var min_zoom: float = 0.1
@@ -42,14 +44,14 @@ func _zoom_at(factor: float, screen_point: Vector2) -> void:
 func _try_select_at(screen_point: Vector2) -> void:
 	var local_point = slide_root.to_local(screen_point)
 	var hit: Editor.SlideObject = null
-	for obj in Document.slide.get_objects_reversed():
-		if obj.get_bounds_rect().has_point(local_point):
+	for obj in document.slide.get_objects_reversed():
+		if obj.rect.has_point(local_point):
 			hit = obj
 			break
 	if hit:
 		selection.select(hit, Input.is_key_pressed(KEY_SHIFT))
 	else:
-		selection.deselect_all()	
+		selection.deselect_all()
 
 func  handle_rmb(event):
 	pass
